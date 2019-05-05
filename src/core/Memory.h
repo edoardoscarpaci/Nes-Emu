@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+#include "../stdafx.h"
 #define CheckPageBoundary(a) a > 0xff
 
 class Memory

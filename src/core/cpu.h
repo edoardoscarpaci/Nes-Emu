@@ -1,6 +1,6 @@
 #pragma once
 
-#include "./stdafx.h"
+#include "../stdafx.h"
 #define Frequency 1.79 * 10E+6 //10e+6 is to let 1.79 in Mhz so million of heartz
 #define FrameRate 60
 #define Multiplier 1.0
@@ -15,8 +15,8 @@ public:
 	//Just mask the bit of the flag
 	inline bool getCarryFlag() { return m_Ps & 0x1;};
 	inline bool getZeroFlag() { return m_Ps & 0x2;};
-	inline bool getDisableInterruptFlag() { return m_Ps & 0x4;};
 	inline bool getDecimalModeFlag() { return m_Ps & 0x8;};
+	inline bool getDisableInterruptFlag() { return m_Ps & 0x4;};
 	inline bool getBreakFlag() {return m_Ps & 0x10;};
 	inline bool getOverflowFlag() { return m_Ps & 0x40; };
 	inline bool getNegativeFlag() { return m_Ps & 0x80; };
@@ -38,7 +38,7 @@ private:
 	SixteenBitRegister m_PC;
 	EightBitRegister m_SP, m_Acc, m_X, m_Y, m_Ps;
 
-	Byte(CPU::*OpCodePointer[256])() =
+	Byte(CPU::*OpCodePointer[256])(void) =
 	{
 		OpCodeBRK,
 		OpCodeORAIndX,
