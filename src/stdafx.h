@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 #include <cstring>
+#include <iostream>
+#include <cstdlib>
 
 #include <cstdint>
 #include "typedef.h"

@@ -5,6 +5,8 @@
 #define FrameRate 60
 #define Multiplier 1.0
 
+
+
 class Memory;
 class CPU
 {
@@ -32,6 +34,7 @@ public:
 	inline void setOverflowFlag(bool on) { on ? m_Ps |= 0x40 : m_Ps &= 0xBF; };
 	inline void setNegativeFlag(bool on) { on ? m_Ps |= 0x80 : m_Ps &= 0x7F;};
 
+	static void NMI_callback();
 
 
 private:
